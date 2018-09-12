@@ -1,0 +1,113 @@
+.view-header{
+  display: flex;
+  flex-direction: row;
+}
+.view-header-avatarImage{
+  width: 60rpx;
+  height: 60rpx;
+display: inline-block;
+vertical-align: middle;
+margin-top: 15rpx;
+}
+.view-header-text{
+ flex-direction: column;
+  display: inline-block;
+  margin-left: 14rpx;
+  margin-top: 12rpx;
+   vertical-align: middle;
+ }
+.view-header-text text{
+ display: block;
+}
+.name{
+  font-size: 25rpx;
+}
+.time{
+  font-size: 20rpx;
+  color: gray;
+}
+.cell-footer image{
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  margin-right: 5rpx;
+  margin-top: 5rpx;
+}
+.cell-footer text{
+  color: gray;
+  font-size: 25rpx;
+  
+}
+.view-footer-container{
+  /* display: ; */
+  /* flex-direction: column; */
+  position: relative;
+  height: 80rpx;
+}
+.view-footer-container view{
+   text-align: center;
+   width: 24.9%;
+  float: left;
+
+}
+.cellImage{
+  width:500rpx;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+}
+.cell-image{
+
+  width: 100%;
+}
+.cellImage{
+  display: inline-block;
+  max-width:99%;
+  height: auto;
+  border: 1px solid greenyellow;
+  
+}
+.cellView{
+  margin-bottom: 10px;
+  background-color: white;
+}
+image{
+  max-width: 100%;
+}
+.view-video{
+  position: absolute;
+  
+}
+video{
+   position: absolute;
+  /* max-width:100%; */
+  min-width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  /* top: 0px; */
+
+}
+.cell-video{
+  position: relative;
+
+}
+.playImage{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  display: block;
+top: 50%;
+left: 50%;
+ /* margin-left: 50%;
+ margin-bottom: 50%; */
+  transform: translate(-50%,-50%);
+  /* opacity: 0; */
+}
+.cellVideoImage{
+  max-width: 100%;
+    margin-left: 50%;
+  transform: translateX(-50%);
+    /* opacity: 0; */
+
+}

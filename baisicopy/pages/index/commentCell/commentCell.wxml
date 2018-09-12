@@ -1,0 +1,111 @@
+<template name='commentCell'>
+<view class='cellView'>
+<view class='view-header'>
+  <image class='view-header-avatarImage' src='{{item.profile_image}}'></image>
+  <view class='view-header-text'>
+    <text class='name'>{{item.name}}</text>
+    <text class='time'>{{item.create_time}}</text>
+  </view>
+</view>
+<!-- 文字 -->
+<view>{{item.text}}</view>
+<!-- //图片 -->
+<view   wx:if="{{item.type=='10'}}" style='text-align:center;overflow: hidden;width:{{item.width}}rpx;height:{{item.height<=750?item.height:750}}rpx' class='cell-image'>
+<view catchtap='imageClick' data-imageUrl='{{item.image0}}' >
+ <image  class='cellImage' mode="aspectFit"  style="width:{{item.width}}rpx;height:{{item.height}}rpx" src='{{item.image0}}'></image>
+ <image wx:if="{{item.height>750}}" mode="aspectFill" src='/images/index/morebtnnormal.png' style="width:80rpx;height:40rpx;positon:absolute"></image>
+</view>
+</view>
+<!-- <view wx:if="{{item.type=='41'}}" class='cell-text'>
+  text
+</view> -->
+<!-- //视频 -->
+<view  wx:if="{{item.type=='41'}}" style='text-align:center' class='cell-video' >
+
+<image  class='cellVideoImage' mode="aspectFill" style="width:{{item.width>750*0.96?750*0.96:item.width}}rpx;height:{{item.height}}rpx" src='{{item.image0}}'></image>
+<image catchtap='palyClick' class='playImage' src='/images/other/play.png' data-imageId='{{item}}' ></image>
+
+<!-- <video style="display:{{videoCurrentId==item.id?'block':'none'}};width:{{item.width>750*0.96?750*0.96:item.width}}rpx;height:{{item.height}}rpx; " id='{{item.id}}' bindplay='videoPlay' controls src="{{item.id!=videoCurrentId?'':item.videouri}}" data-videoH='{{item.height}}' ></video> -->
+
+</view>
+<!-- 音频 -->
+  <view wx:if="{{item.type=='31'}}" class="content-multimedia" >
+                <audio id="{{item.id}}" src="{{item.voiceuri}}" poster="{{item.bimageuri}}" author="{{item.screen_name}}" bindplay="audioplay" bindended="audioEndPlay" controls></audio>
+            </view>
+
+
+
+<view class='cell-footer'>
+  <view style='height:1px;background:gray;width:100%'></view>
+ 
+  <view class='view-footer-container'>
+    <view>
+      <image src='/images/index/mainCellDing.png'></image>
+      <text>{{item.ding}}</text>
+    </view>
+    <view>
+      <image src='/images/index/mainCellCai.png'></image>
+      <text>{{item.cai}}</text>
+    </view>
+    <view>
+      <image src='/images/index/mainCellShare.png'></image>
+      <text>{{item.repost}}</text>
+    </view>
+    <navigator style='text-align:center' url='/pages/index/comment/comment?id={{item.id}}'>
+      <image src='/images/index/mainCellComment.png'></image>
+      <text>{{item.comment}}</text>
+       </navigator>
+
+  </view>
+
+</view>
+
+</view>
+
+
+</template>
+<!-- <view wx:if="{{item.type=='41'}}" class='cellView'>
+<view class='view-header'>
+  <image class='view-header-avatarImage' src='{{item.profile_image}}'></image>
+  <view class='view-header-text'>
+    <text class='name'>{{item.name}}</text>
+    <text class='time'>{{item.create_time}}</text>
+  </view>
+</view>
+
+<!-- //视频 -->
+<!-- <view   style='text-align:center' class='cell-video' >
+
+<image  class='cellVideoImage' mode="aspectFill" style="width:{{item.width>750*0.96?750*0.96:item.width}}rpx;height:{{item.height}}rpx" src='{{item.image0}}'></image>
+<image catchtap='palyClick' class='playImage' src='/images/other/play.png' data-imageId='{{item.id}}' ></image>
+
+<video style="display:{{videoCurrentId==item.id?'block':'none'}};width:{{item.width>750*0.96?750*0.96:item.width}}rpx;height:{{item.height}}rpx; " autoplay='true' id='{{item.id}}' bindplay='videoPlay' controls src="{{item.id!=videoCurrentId?'':item.videouri}}" data-videoH='{{item.height}}' ></video>
+
+</view>
+
+
+<view class='cell-footer'>
+  <view style='height:1px;background:gray;width:100%'></view>
+ 
+  <view class='view-footer-container'>
+    <view>
+      <image src='/images/index/mainCellDing.png'></image>
+      <text>{{item.ding}}</text>
+    </view>
+    <view>
+      <image src='/images/index/mainCellCai.png'></image>
+      <text>{{item.cai}}</text>
+    </view>
+    <view>
+      <image src='/images/index/mainCellShare.png'></image>
+      <text>{{item.repost}}</text>
+    </view>
+    <navigator style='text-align:center' url=''>
+      <image src='/images/index/mainCellComment.png'></image>
+      <text>{{item.comment}}</text>
+       </navigator>
+
+  </view>
+
+</view>
+</view> --> -->

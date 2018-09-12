@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<import src='../index/commentCell/commentCell.wxml'/>
+<view class='navHeader'>
+  <block wx:for="{{navItemTitles}}" wx:for-index='idx'>
+    <view data-idx="{{idx}}" catchtap='navItemClick' class="common {{swiperItemLeft==idx?'active':''}}">
+      {{item}}
+    </view>
+  </block>
+</view>
+<view class='nav-line' style='margin-left:{{swiperItemLeft*20}}%'></view>
+<!-- <swiper class=''>
+
+</swiper> -->
+
+<view class='view-container' bindtouchmove="handletouchmove"  >
+<view class='view-hud-video' style="display:{{videoDetail.videouri?'block':'none'}};overflow: visible;top:0rpx;background-color:black;width:100%;height:500rpx;" >
+
+<video style="height:500rpx;" id='video111' bindended='videoEnd' controls src="{{videoDetail.id!=videoCurrentId?'':videoDetail.videouri}}" data-videoH='{{videoDetail.height}}' autoplay='true' ></video>
+</view>
+<button class='videoClose' style="display:{{videoDetail.videouri?'block':'none'}};background-color:black;opacity:0.8;right:10px;top:580rpx;position:fixed;color:white;font-size:10px;z-index:9999" catchtap='closeVideo'>关闭视频</button>
+<swiper class='view-swiper' bindchange='swiperChange' current='{{currentItemId}}'>
+
+<!-- 全部 -->
+<swiper-item>
+<scroll-view bindscroll="scroll"  bindscrolltoupper='scrollToUp'  scroll-top='{{scrollTop}}'  class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData">
+<block wx:for='{{dataList}}'>
+<template  is="commentCell" data="{{item}}"/>
+</block>
+</scroll-view>
+</swiper-item>
+<!-- 视频 -->
+<swiper-item>
+<scroll-view bindscroll="scroll"  bindscrolltoupper='scrollToUp'  scroll-top='{{scrollTop}}'  class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData">
+<block wx:for='{{dataVideo}}'>
+<template  is="commentCell" data="{{item}}"/>
+
+</block>
+</scroll-view>
+</swiper-item>
+<!-- 图片 -->
+<swiper-item>
+<scroll-view bindscroll="scroll"  bindscrolltoupper='scrollToUp'  scroll-top='{{scrollTop}}'  class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData">
+<block wx:for='{{dataPic}}'>
+<template is="commentCell" data="{{item}}"/>
+</block>
+</scroll-view>
+</swiper-item>
+<!-- 段子 -->
+<swiper-item>
+<scroll-view bindscroll="scroll"  bindscrolltoupper='scrollToUp'  scroll-top='{{scrollTop}}'  class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData">
+<block wx:for='{{dataTalk}}'>
+<template is="commentCell" data="{{item}}"/>
+</block>
+</scroll-view>
+</swiper-item>
+<!-- 声音 -->
+<swiper-item>
+<scroll-view bindscroll="scroll"  bindscrolltoupper='scrollToUp'  scroll-top='{{scrollTop}}'  class="scrollView" scroll-y="true" bindscrolltolower="loadMoreData">
+<block wx:for='{{dataVoice}}'>
+<template is="commentCell" data="{{item}}"/>
+</block>
+</scroll-view>
+</swiper-item>
+
+</swiper>
+</view>
+
+<button catchtap='scrollToTop' class='topBtn'>
+回到顶部
+</button>
+

@@ -1,0 +1,75 @@
+/**index.wxss**/
+@import 'commentCell/commentCell.wxss';
+page{
+  background-color: gainsboro;
+  
+}
+
+.navHeader{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+
+/* background-color: gainsboro;
+color: gray;
+height: 30rpx;
+flex-direction: column;
+display: block;
+position: relative; */
+height: 80rpx;
+background-color: rebeccapurple;
+
+}
+.common{
+  background-color:gainsboro;
+  float: left;
+  width: 20%;
+  text-align: center;
+  font-size: 30rpx;
+  color: gray;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+.active{
+color: red;
+}
+.nav-line{
+  position: fixed;
+  z-index: 9999;
+  background-color: red;
+  top: 81rpx;
+  height: 2px;
+  width:20%;
+}
+.topBtn{
+  position:fixed;
+  width:60px;
+  height:60px;
+  border-radius: 50%;
+  right:10px;
+ bottom:10px;
+  z-index: 9999;
+  font-size: 16px;
+  line-height: 30px;
+  
+}
+.view-container{
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 82rpx;
+  position: fixed;
+  bottom:0px;
+  top: 0px;
+
+
+}
+.scrollView{
+   height: 100%;
+
+}
+.view-swiper{
+width: 100%;
+height:100%;
+background-color: rebeccapurple;
+}
